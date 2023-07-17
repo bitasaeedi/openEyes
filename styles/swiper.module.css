@@ -1,0 +1,9 @@
+.MySwiper {
+    width: 100%;
+}
+@media (max-width: 500px) {
+    .MySwiper {
+       width:340px;
+
+    }
+}
