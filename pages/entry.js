@@ -8,6 +8,7 @@ import {
 } from "@/styled-component/entry-style";
 import Image from "next/image";
 import {useState} from "react";
+import Link from "next/link";
 
 function Entry(props) {
     let [signUp,setSignUp]=useState(true);
@@ -47,14 +48,16 @@ function SIGN_IN(){
                 <Image width='' height='' src={require('@/public/sign3.svg')} alt=''/>
                 <input placeholder={'Password'} type={ShowPass===true?'text':'password'}/>
                 <div onClick={()=>{setShowPass(!ShowPass)}}><Image width='' height='' src={require('@/public/sign4.svg')} alt=''/></div>
-                <span>Forgot password?</span>
+                <Link href={'/resetPassword'}><span>Forgot password?</span></Link>
             </Input_box>
             <Sign_button>SIGN IN</Sign_button>
-            <p>Don’t have an account?<span>Sign up here</span></p>
+            <p>Don’t have an account?<Link href={'/entry'}><span>Sign up here</span></Link></p>
         </>
     )
 }
 function Sign_Up(){
+    let[ShowPass,setShowPass]=useState(false);
+    let[ShowPass2,setShowPass2]=useState(false);
     return (
         <>
             <Input_box>
@@ -74,19 +77,19 @@ function Sign_Up(){
 
             <Input_box>
                 <Image width='' height='' src={require('@/public/sign3.svg')} alt=''/>
-                <input placeholder={'Password (at least 8 character)'} type={'password'}/>
-                <Image width='' height='' src={require('@/public/sign4.svg')} alt=''/>
+                <input placeholder={'Password (at least 8 character)'} type={ShowPass===true?'text':'password'}/>
+                <div onClick={()=>{setShowPass(!ShowPass)}}><Image width='' height='' src={require('@/public/sign4.svg')} alt=''/></div>
             </Input_box>
 
             <Input_box>
                 <Image width='' height='' src={require('@/public/sign3.svg')} alt=''/>
-                <input placeholder={'Confirm password'} type={'password'}/>
-                <Image width='' height='' src={require('@/public/sign4.svg')} alt=''/>
+                <input placeholder={'Confirm password'} type={ShowPass2===true?'text':'password'}/>
+                <div onClick={()=>{setShowPass2(!ShowPass2)}}><Image width='' height='' src={require('@/public/sign4.svg')} alt=''/></div>
                 <span><input type={'checkbox'}/>I accept the term of use & privacy policy </span>
             </Input_box>
 
             <Sign_button>SIGN UP</Sign_button>
-            <p>Already have an account?<span>Sign in here</span></p>
+            <p>Already have an account?<Link href={'/entry'}><span>Sign in here</span></Link></p>
         </>
     )
 }

@@ -44,12 +44,21 @@ export const Right_section = styled.div`
     margin-top: 1.2rem;
     font-size: .9rem;
 
-    & > span {
+    & >a>span {
       font-weight: 800;
       font-size: .9rem;
       display: inline-block;
-      margin-left: 1rem;
+      margin-left: .8rem;
+      text-decoration: none;
+      color: #1C274C;
     }
+  }
+  &>p{
+    color: #1C274C;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-align: center;
+    margin-bottom: 2rem;
   }
 
   @media (max-width: 430px) {
@@ -67,7 +76,7 @@ export const Switch_Box = styled.div`
   width: fit-content;
   padding: .8rem 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
   align-items: center;
   background-color: rgba(28, 39, 76, 0.50);
   color: white;
@@ -88,6 +97,10 @@ export const Switch_Box = styled.div`
     font-size: 1.2rem;
     color: #1C274C;
     font-weight: 600;
+  }
+  &>div.center{
+    margin: 0 auto;
+    padding: 0 .5rem;
   }
 
   @media (max-width: 430px) {
@@ -117,12 +130,19 @@ export const Input_box = styled.div`
   display: flex;
   align-items: center;
   position: relative;
-
+&>a{
+  position: absolute;
+  bottom: -1.8rem;
+  font-size: .9rem;
+  color: #1C274C;
+  text-decoration: none;
+}
   & > span {
     position: absolute;
     bottom: -1.8rem;
     font-size: .9rem;
     color: #1C274C;
+    
 
     & > input {
       width: 18px;
@@ -198,4 +218,5 @@ export const Sign_button = styled.div`
   border-radius: 8px;
   font-weight: 600;
   box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 `
